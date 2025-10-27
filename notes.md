@@ -1,0 +1,10 @@
+- YANG data describes network interface configuration
+    - Tree structure
+    - Top level: 1 node (node = network device)
+    - Next: All interfaces
+    - Next: Each interface
+    - Per interface:
+        - Configuration settings and
+        - metrics (such as Tx/Rx bytes)
+    - One node inside a YANG message is one leaf item
+    - Message key = interface ID
