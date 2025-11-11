@@ -24,4 +24,4 @@ Describes the Kafka Consumer, Producer, and Schema Registry integration
 
 - https://www.claise.be/what-about-having-the-network-state-directly-in-a-kafka-topic-for-easy-consumption/
 - https://www.linkedin.com/pulse/enabling-network-digital-twin-right-data-place-thomas-graf-d4lae/
-- https://github.com/network-analytics/ietf-network-analytics-document-status/blob/main/124/NMOP/draft-netana-nmop-yang-message-broker-message-key-01.pdf
+- https://github.com/network-analytics/ietf-network-analytics-document-status/blob/main/124/NMOP/draft-netana-nmop-yang-message-broker-message-key-01.pdf (slide 13, use cases)
