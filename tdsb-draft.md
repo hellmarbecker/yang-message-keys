@@ -45,3 +45,9 @@ Data belonging to different partitions are separated into different parts. In th
 Each data part is logically divided into granules. A granule is the smallest indivisible data set that ClickHouse reads when selecting data. ClickHouse does not split rows or values, so each granule always contains an integer number of rows. The first row of a granule is marked with the value of the primary key for the row. For each data part, ClickHouse creates an index file that stores the marks. For each column, whether it's in the primary key or not, ClickHouse also stores the same marks. These marks let you find data directly in column files.
 
 Thus, it is possible to quickly run queries on one or many ranges of the primary key. 
+
+
+TODO:
+
+- keep history that is not in kafka (because of limited retention or log compaction)
+- fill data points to a grid where there are no changes (like continuing the last known state every hour or so)
