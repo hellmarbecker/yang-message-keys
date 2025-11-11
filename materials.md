@@ -17,6 +17,9 @@ Describes the Kafka Consumer, Producer, and Schema Registry integration
 - https://datatracker.ietf.org/doc/html/draft-netana-nmop-yang-message-broker-message-key
 - https://datatracker.ietf.org/doc/draft-ietf-nmop-message-broker-telemetry-message/
 
+- https://datatracker.ietf.org/doc/html/draft-ietf-nmop-yang-message-broker-integration-09#name-yang-data-storage
+- https://datatracker.ietf.org/doc/html/draft-ietf-nmop-yang-message-broker-integration-09#name-elements-of-the-architectur
+
 ## Blogs
 
 - https://www.claise.be/what-about-having-the-network-state-directly-in-a-kafka-topic-for-easy-consumption/
