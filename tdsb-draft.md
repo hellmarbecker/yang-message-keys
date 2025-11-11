@@ -34,10 +34,14 @@ The message key and partition ID are available as virtual (read only) columns `_
 
 #### Data Model
 
-Unlike other realtime analytics databases, ClickHouse does not rely on partitioning data by timestamp. ClickHouse represents data in the _MergeTree_ format:
+Unlike other realtime analytics databases, ClickHouse does not (necessarily) rely on partitioning data by timestamp. ClickHouse represents data in the _MergeTree_ format:
 
 A table consists of data parts sorted by primary key.
 
-When data is inserted in a table, separate data parts are created and each of them is lexicographically sorted by primary key. For example, if the primary key is (CounterID, Date), the data in the part is sorted by CounterID, and within each CounterID, it is ordered by Date.
+When data is inserted in a table, separate data parts are created and each of them is lexicographically sorted by primary key. For example, if the primary key is (MessageKey, Date), the data in the part is sorted by MessageKey, and within each MessageKey, it is ordered by Date.
 
 Data belonging to different partitions are separated into different parts. In the background, ClickHouse merges data parts for more efficient storage. Parts belonging to different partitions are not merged. The merge mechanism does not guarantee that all rows with the same primary key will be in the same data part.
+
+Each data part is logically divided into granules. A granule is the smallest indivisible data set that ClickHouse reads when selecting data. ClickHouse does not split rows or values, so each granule always contains an integer number of rows. The first row of a granule is marked with the value of the primary key for the row. For each data part, ClickHouse creates an index file that stores the marks. For each column, whether it's in the primary key or not, ClickHouse also stores the same marks. These marks let you find data directly in column files.
+
+Thus, it is possible to quickly run queries on one or many ranges of the primary key. 
