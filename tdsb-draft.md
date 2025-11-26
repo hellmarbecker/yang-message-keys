@@ -4,7 +4,14 @@
 
 ### 1. Time Series Databases
 
-...
+Time series databases would usually partition and sort incoming data by timestamp. 
+
+Advantages:
+
+- Fast selection of subsets by time interval
+- Built in support for aggregation (rollup) by 
+
+Disadvantages:
 
 ### 2. ClickHouse
 
